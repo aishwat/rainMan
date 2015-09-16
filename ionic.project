@@ -1,0 +1,10 @@
+{
+  "name": "rainMan",
+  "app_id": "",
+   "proxies": [
+    {
+      "path": "/epoch",
+      "proxyUrl": "https://api.forecast.io/forecast/e484166ba170e8de0b3f2093befb29b9/37.8267,-122.423"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<ion-view view-title="Predictions">
+    <ion-content id="map_canvas">
+        <div id="wrapper" class="item item-input item-input item controls">
+            <i class="icon ion-search placeholder-icon"></i>
+            <form ng-submit="search()">
+                <input type="search" id="txtSearch" placeholder="Search a town or postcode" />
+            </form>
+            <button class="button button-small button-clear" ng-click="clearText()">
+                <i class="icon ion-close-circled placeholder-icon"></i>
+            </button>
+        </div>
+    </ion-content>
+    <ion-footer-bar align-text="center" class="bar-assertive">
+        <h3 class="title">{{footer.text}}</h3>
+        <div ng-show="footer.container.show">
+            <canvas id="rain" width="32" height="32">
+            </canvas>
+            <h5 class="title">{{footer.container.data.currently.summary}}</h5>
+            <a class="button button-clear icon icon-right ion-chevron-right" href="#/app/predictions_list" ></a>
+        </div>
+    </ion-footer-bar>
+</ion-view>

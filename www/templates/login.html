@@ -1,0 +1,73 @@
+<ion-view view-title="Login">
+    <ion-content class="padding">
+        <button class="button button-block icon-left ion-android-call button-balanced" ng-click="toggle()">{{verifiedNumber}}
+            <span class="item-note" ng-if="verifiedNumber=='Phone Number'?false:true" style="height:20px;color:white;">
+           <i class="icon ion-checkmark-circled"></i>
+        </span>   
+        </button>
+        
+        <div class="card" ng-if="showCallCard" style="margin-top:-8px!important;">
+            <label class="text-center" style="color: gray ;font-style:italic;display: block;">{{callStatus}}
+            </label>
+            <div class="loader">
+                &nbsp;
+            </div>
+            <div class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    <i class="icon ion-android-call placeholder-icon"></i>
+                    <input type="tel" placeholder="+91-9535373749" id="number" style="height:37px;">
+                </label>
+                <button class="button button-small button-outline button-positive" ng-click="waitingForOTP?verifyOTP():call()" ng-disabled="cnfIsDisabled" style="height:35px;">
+                    Confirm
+                </button>
+            </div>
+        </div>
+        <a class="button button-block icon-left ion-social-facebook button-positive" ng-click="fb()">{{fbData.name}}
+        <span class="item-note" ng-if="fbData.picture.data.url==''?false:true">
+            <img class="avatar" src={{fbData.picture.data.url}}></img>
+        </span>
+        </a>
+        <a class="button button-block icon-left ion-social-googleplus button-assertive" ng-click="google()">{{googleData.displayName}}
+         <span class="item-note" ng-if="googleData.image.url==''?false:true">
+            <img class="avatar" src={{googleData.image.url}}></img>
+        </span>
+        </a>
+        <!-- <a class="button button-block icon-left ion-social-twitter button-calm" ng-click="twitter()">{{twitterUsername}}</a> -->
+    </ion-content>
+</ion-view>
+<style>
+.loader {
+    height: 4px;
+    width: {{loaderPercent}}%;
+    background: #0000FF;
+    opacity: .6;
+    transition: width .5s;
+}
+
+.avatar {
+    margin-top: 3px!important;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.loading {
+    background-color: rgba(255, 255, 255, 0)!important;
+}
+a {text-decoration: none;}
+</style>
+<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+<!-- <label class="item item-input">
+    <span class="input-label">Phone#</span>
+    <input type="tel" id="number">
+</label>
+<button class="button button-full button-positive" ng-click="verify_1()">
+    {{btnText}}
+</button>
+<div ng-show="showSpinner" style="margin-right: auto; margin-left: auto; width:80px;height:80px ">
+    <ion-spinner icon="android" class="spinner-royal" text-align="center"></ion-spinner>
+</div>
+ -->
